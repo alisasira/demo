@@ -1,0 +1,6 @@
+Date;From Account;Sender;To Account;Recipient;Category;Type;Amount
+2023-04-10 23:16:03.0;44444444;Fourth Four;11111111;First One;salary;OUTCOME;10000
+2023-04-10 23:18:03.0;33333333;Third Three;44444444;Fourth Four;moneyTransfer;INCOME;5000
+2023-04-10 23:20:03.0;11111111;First One;44444444;Fourth Four;grocery;INCOME;700
+2023-04-10 23:22:03.0;11111111;First One;44444444;Fourth Four;onlineShopping;INCOME;1500
+2023-04-10 23:24:03.0;44444444;Fourth Four;11111111;First One;onlineShopping;OUTCOME;2000
