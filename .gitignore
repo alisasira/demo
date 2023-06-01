@@ -1,0 +1,11 @@
+*.iml
+*.ipr
+*.iws
+*.class
+.idea/
+
+/out/
+/unit_1_compile/java/level_2/src/main/build/
+**/target
+**/dependency-reduced-pom.xml
+/.idea/
