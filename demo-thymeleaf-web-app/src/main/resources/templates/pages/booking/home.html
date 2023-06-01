@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/booking_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Dream - Booking</title>
+</head>
+<body>
+<div layout:fragment="booking_content">
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Book Your Dream</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Please choose from what date and time You want to book and till what date and time in the second window </h2>
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <form class="form-signup" id="bookingForm" action="#" th:action="@{/booking/create}"
+                              method="post" th:object="${bookingForm}">
+                            <div class="row input-group-newsletter">
+                                <div class="col"><input class="form-control" id="fromDate" type="datetime-local"
+                                                        placeholder="Enter from date..."
+                                                        style="padding: 1.0rem;font-size: 100%"
+                                                        aria-label="Enter from date..."
+                                                        data-sb-validations="required"
+                                                        th:field="*{fromDate}"
+                                /></div>
+                                <div class="col"><input class="form-control" id="toDate" type="datetime-local"
+                                                        placeholder="Enter to date..."
+                                                        style="padding: 1.0rem;font-size: 100%"
+                                                        aria-label="Enter to date..."
+                                                        data-sb-validations="required"
+                                                        th:field="*{toDate}"
+                                /></div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary" id="submitButton" type="submit">Book
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+</body>
+</html>

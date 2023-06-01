@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/booking_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Dream - Booking History</title>
+</head>
+<body>
+<div layout:fragment="booking_content">
+    <section class="projects-section masthead" id="booking-history">
+        <div class="featured-text vertical-separator h-100">
+            <div>
+                <h1 style="text-align:center;color: var(--bs-link-color)">My bookings</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <table class="table-dark" style="width: 70%">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Current Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:if="${bookingHistoryList.isEmpty()}">
+                        <td colspan="5"> No Bookings Available</td>
+                    </tr>
+                    <tr th:each="booking : ${bookingHistoryList}">
+                        <td><span th:text="${booking.id}"> 100023 </span></td>
+                        <td><span th:text="${booking.fromDate}"> Some DateTime </span></td>
+                        <td><span th:text="${booking.toDate}"> Some DateTime </span></td>
+                        <td><a th:text="${booking.status}"> PENDING </a></td>
+                        <td>
+                            <div th:if="${booking.status == 'PENDING' || booking.status == 'APPROVED'}">
+                                <a class="btn btn-warning" style="padding: 0.5rem 1.5rem" th:href="@{/booking/cancel/{id}(id=${booking.id})} ">
+                                    CANCEL </a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
