@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          replication-factor: 1
+      bindings:
+        produceMessage-out-0:
+          destination: message-stream
+          content-type: application/json
+        processMessage-in-0:
+          destination: message-stream
+          content-type: application/json
+      function:
+        definition: produceMessage;processMessage
+  kafka:
+    bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
+  integration:
+    poller:
+      max-messages-per-poll: 10
