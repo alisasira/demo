@@ -9,3 +9,4 @@
 **/target
 **/dependency-reduced-pom.xml
 /.idea/
+/demo-telegram-bot/src/main/resources/bot.properties

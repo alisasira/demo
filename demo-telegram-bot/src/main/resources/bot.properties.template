@@ -1,0 +1,3 @@
+bot.token=<telegram-token>
+bot.username=<bot-name>
+bot.start-secret=<my-secret-key>
